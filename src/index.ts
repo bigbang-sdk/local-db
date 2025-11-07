@@ -1,1 +1,1 @@
-console.log("Hello via Bun!");
+export * from "./app/use-local-db";
