@@ -1,4 +1,4 @@
-# @bigbang-sdk/local-db
+## Introduction
 
 A tiny **client-side React hook** for **persistent state**, backed by **IndexedDB**, with:
 
