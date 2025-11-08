@@ -1,5 +1,5 @@
 import { getBroadcastChannel } from "./broadcast";
-import { idbGet, idbSet } from "./idb";
+import { DEFAULT_DB, DEFAULT_STORE, idbGet, idbSet } from "./idb";
 
 export type StoreState<T> = {
   value: T | null | undefined; // undefined = hydrating
@@ -12,8 +12,8 @@ type Ns = { dbName?: string; storeName?: string };
 
 // Composite registry key: namespace + logical key
 function regKey(key: string, ns: Ns) {
-  const db = ns.dbName ?? "bigbang";
-  const st = ns.storeName ?? "local-db";
+  const db = ns.dbName ?? DEFAULT_DB;
+  const st = ns.storeName ?? DEFAULT_STORE;
   return `${db}/${st}|${key}`;
 }
 
